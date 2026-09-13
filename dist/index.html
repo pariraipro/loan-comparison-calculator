@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loanwise — Compare the true cost of your loan</title>
+<meta name="description" content="Compare loan EMIs, processing fees, interest and total repayment in Indian rupees. A private, interactive calculator for comparing your lender quotes.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2314213b'/%3E%3Cpath d='M10 13h13M10 20h20M17 27h13' stroke='%235ce0ca' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner"><a class="brand" href="#main"><span class="brand-mark"><i></i><i></i><i></i></span>loanwise<span class="brand-dot">.</span></a><nav aria-label="Main navigation"><a class="active" href="#compare">Compare loans</a><a href="#breakdown">Cost breakdown</a></nav><span class="header-note"><span data-icon="lock"></span>Private by design</span></div></header>
+<main id="main">
+ <section class="heading-row" id="compare"><div><p class="eyebrow">LESS GUESSWORK. MORE CLARITY.</p><h1>Compare the true cost.</h1><p class="intro">A lower interest rate isn’t always a cheaper loan. See the whole picture.</p></div><button class="text-button" id="reset-button"><span data-icon="reset"></span>Reset example</button></section>
+ <div class="workspace">
+  <aside class="loan-settings">
+   <div class="settings-heading"><span class="settings-icon" data-icon="sliders"></span><h2>Your loan</h2><span class="currency-tag">INR</span></div>
+   <p class="settings-intro">One amount. Up to four offers.</p>
+   <label class="input-label" for="loan-amount">Loan amount</label><div class="principal-input"><span>₹</span><input type="number" id="loan-amount" value="1000000" min="10000" max="100000000" step="1000" inputmode="numeric"></div>
+   <div id="principal-caption" class="principal-caption">10 lakh rupees</div>
+   <input class="amount-range" type="range" id="amount-range" min="10000" max="5000000" step="10000" value="1000000" aria-label="Adjust loan amount">
+   <div class="range-labels"><span>₹10,000</span><span>₹50 lakh</span></div>
+   <div class="presets" aria-label="Loan amount presets"><button data-amount="500000">₹5L</button><button class="selected" data-amount="1000000">₹10L</button><button data-amount="2500000">₹25L</button></div>
+   <p class="field-error" id="principal-error" role="alert" hidden></p>
+   <div class="settings-divider"></div>
+   <div class="model-label"><span data-icon="check"></span>Monthly reducing balance</div><p class="settings-copy">Interest is calculated on the outstanding loan amount each month.</p>
+   <div class="settings-divider"></div>
+   <h3>Bring your lender’s quote.</h3><p class="settings-copy">Enter its rate, tenure and upfront charges. The example offers are illustrative, not current bank rates.</p>
+   <button class="method-link" id="method-button">How we calculate <span>↗</span></button>
+  </aside>
+  <section class="comparison-area" aria-label="Loan offers">
+   <div class="comparison-toolbar"><div><span class="small-status">LIVE COMPARISON</span><span id="offer-count">3 offers</span></div><button class="add-button" id="add-offer"><span>＋</span>Add offer</button></div>
+   <div id="offer-grid" class="offer-grid">
+    <article class="offer-card"><div class="offer-header"><span class="offer-letter">A</span><h2>Offer A</h2></div><div class="static-fields"><label>Interest rate <span>11.50% p.a.</span></label><label>Loan tenure <span>36 months</span></label></div><div class="emi-block"><span>MONTHLY EMI</span><strong>₹32,976</strong><small>Estimated monthly payment</small></div></article>
+    <article class="offer-card best"><div class="offer-header"><span class="offer-letter">B</span><h2>Offer B</h2></div><div class="static-fields"><label>Interest rate <span>10.50% p.a.</span></label><label>Loan tenure <span>36 months</span></label></div><div class="emi-block"><span>MONTHLY EMI</span><strong>₹32,502</strong><small>Estimated monthly payment</small></div></article>
+    <article class="offer-card"><div class="offer-header"><span class="offer-letter">C</span><h2>Offer C</h2></div><div class="static-fields"><label>Interest rate <span>9.90% p.a.</span></label><label>Loan tenure <span>36 months</span></label></div><div class="emi-block"><span>MONTHLY EMI</span><strong>₹32,221</strong><small>Estimated monthly payment</small></div></article>
+   </div>
+   <p class="rounding-note">Fixed rates · Fees paid upfront · Figures rounded to the nearest rupee</p>
+  </section>
+ </div>
+ <section class="verdict" id="verdict" aria-live="polite"><div class="verdict-icon" data-icon="sparkle"></div><div><span class="verdict-kicker">THE BIGGER PICTURE</span><h2>Compare the payment and the total.</h2><p>Adjust the offers to find the lowest total cost for your loan amount.</p></div></section>
+ <section class="breakdown-section" id="breakdown"><div class="section-heading"><div><p class="eyebrow">EVERY RUPEE, ACCOUNTED FOR</p><h2>What you’ll actually pay.</h2><p>Principal, interest and upfront charges — together.</p></div><div class="chart-legend"><span><i class="principal-key"></i>Principal</span><span><i class="interest-key"></i>Interest</span><span><i class="fees-key"></i>Fees</span></div></div><div class="breakdown-layout"><div class="breakdown-chart" id="breakdown-chart"><p class="chart-empty">Your comparison will appear here.</p></div><div class="cost-note"><span data-icon="bulb"></span><h3>Look beyond the EMI.</h3><p>A longer tenure can reduce your monthly payment while increasing the total interest you pay.</p><p>Include processing charges, applicable taxes and required upfront costs from each quote.</p></div></div></section>
+ <section class="comparison-table-section"><div class="section-heading"><div><h2>The numbers, side by side.</h2><p>Compare the same loan amount across different terms.</p></div></div><div class="table-wrap"><table id="comparison-table"><caption class="sr-only">Detailed loan comparison</caption><thead></thead><tbody></tbody></table></div></section>
+ <footer><a class="brand footer-brand" href="#main">loanwise<span class="brand-dot">.</span></a><p>Your numbers stay in this browser. No account required.</p><button class="text-button" id="footer-method">Calculation assumptions <span>↗</span></button></footer>
+</main>
+<dialog id="method-dialog" aria-labelledby="method-title"><div class="dialog-heading"><h2 id="method-title">The maths behind the comparison.</h2><button class="close-button" id="close-method" aria-label="Close calculation details">×</button></div><p>We estimate a fixed-rate loan with equal monthly payments on a reducing balance. Payments start one month after disbursal.</p><div class="formula">EMI = P × r ÷ [1 − (1 + r)<sup>−n</sup>]</div><dl><div><dt>P</dt><dd>Loan principal in rupees</dd></div><div><dt>r</dt><dd>Annual interest rate ÷ 12 ÷ 100</dd></div><div><dt>n</dt><dd>Number of monthly payments</dd></div></dl><p>At 0% interest, EMI is simply principal ÷ months.</p><ul><li><strong>Total interest:</strong> EMI × months − principal.</li><li><strong>Upfront fees:</strong> processing fee + other charges you enter.</li><li><strong>Total repayment:</strong> all monthly payments + upfront fees.</li><li><strong>Cost of borrowing:</strong> total interest + upfront fees.</li></ul><p>Fees are paid separately upfront and aren’t added to the financed amount. Include applicable taxes and required charges in “Other charges”.</p><p class="assumption-note">This model excludes changing rates, daily interest, prepayments, late fees, moratoriums and insurance unless entered as an upfront charge. Figures use full precision internally and are displayed rounded. Your lender’s repayment schedule may differ.</p></dialog>
+<script type="module" src="./app.js"></script>
+</body></html>
