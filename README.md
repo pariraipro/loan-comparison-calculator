@@ -1,5 +1,7 @@
 # Loanwise
 
+[Open Loanwise](https://pariraipro.github.io/loan-comparison-calculator/)
+
 A standalone loan comparison app for Indian rupee loans. Open the hosted site or serve the `dist` folder with any static web server.
 
 ## Run locally
@@ -35,3 +37,7 @@ Assumptions: fixed rate, monthly reducing balance, payment at each month end, no
 - `dist/calculator.mjs`: input validation and pure financial calculations
 
 No package installation or build step is required.
+
+## Publishing
+
+The public website is served by GitHub Pages. Pushes to `main` run `.github/workflows/pages.yml`, which publishes the static `dist` directory. Assets and JavaScript imports use relative paths so they work beneath the repository URL. No account or sign-in is required to use the demo.
